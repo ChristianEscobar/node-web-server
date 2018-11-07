@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// Use environment variable if it exists
+const PORT = process.env.PORT || 3000;
 let app = express();
 
 // Set view engine
@@ -63,7 +65,6 @@ app.get('/bad', (req, res) => {
 });
 
 // Bind to port
-const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is up on port ${PORT}`)
 });
